@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #countdown {
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 100px;
+            width: 100px;
+            margin-top: 30px;
+            padding-top: 10px;
+            background-color: darkgray;
+            font-size: 2rem;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4); /* Added shadow */
+        }
+        #message {
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 100px;
+            width: 250px;
+            margin-top: 30px;
+            padding-top: 10px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: lightgrey;
+            display: none;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5); /* Added shadow */
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="countdown">3</div>
+        <div id="message">🎉 Hello Everyone! 🎉<br><br> This is Shashavali.  </div>
+    </center>
+    <script>
+        let countdown = 3;
+        let cd = document.getElementById("countdown");
+        let msg = document.getElementById("message");
+
+        timer = setInterval(() => {
+            countdown--;
+            cd.textContent = countdown;
+            if (countdown === 0) {
+                clearInterval(timer);
+                cd.style.display = "none";
+
+                setTimeout(() => {
+                    msg.style.display = "block";
+                }, 1000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
