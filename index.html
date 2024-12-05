@@ -33,22 +33,31 @@
             margin-top: 30px;
             padding-top: 10px;
             font-size: 1.5rem;
-            color: white;
+            color: black;
             background-color: lightgrey;
             display: none;
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5); /* Added shadow */
+        }
+        #p2{
+            display: none;
         }
     </style>
 </head>
 <body>
     <center>
-        <div id="countdown">3</div>
+        <p id="p1"> CountDown Starts :</p>
+        <div id="countdown"> 3</div>
+        <p id="p2"> Message </p>
+
         <div id="message">🎉 Hello Everyone! 🎉<br><br> This is Shashavali.  </div>
     </center>
     <script>
         let countdown = 3;
         let cd = document.getElementById("countdown");
         let msg = document.getElementById("message");
+        let p = document.getElementById("p1");
+        let p2 = document.getElementById("p2");
+
 
         timer = setInterval(() => {
             countdown--;
@@ -56,9 +65,12 @@
             if (countdown === 0) {
                 clearInterval(timer);
                 cd.style.display = "none";
+                p.style.display = "none";
 
                 setTimeout(() => {
                     msg.style.display = "block";
+                    p2.style.display = "block";
+
                 }, 1000);
             }
         }, 1000);
